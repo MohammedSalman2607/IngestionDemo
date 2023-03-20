@@ -1,0 +1,21 @@
+syntax = "proto3";
+option java_multiple_files=true;
+package com.kafka;
+
+
+option java_package = "com.kafka";
+service IngestionService {
+  rpc ingestDataPacket(DataPacketRequest) returns (DataPacketResponse) {};
+}
+
+message DataPacketRequest {
+  string caseNumber = 1;
+  string patchId = 2;
+  string deviceName = 3;
+  repeated string data = 4;
+}
+
+message DataPacketResponse {
+  string servermsg= 1;
+  repeated int64 ingestedTimeStamps = 2;
+}
