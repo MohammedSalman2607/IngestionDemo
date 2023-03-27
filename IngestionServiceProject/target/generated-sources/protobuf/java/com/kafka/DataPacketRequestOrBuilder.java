@@ -55,4 +55,14 @@ public interface DataPacketRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getDataBytes(int index);
+
+  /**
+   * <code>string version = 5;</code>
+   */
+  java.lang.String getVersion();
+  /**
+   * <code>string version = 5;</code>
+   */
+  com.google.protobuf.ByteString
+      getVersionBytes();
 }

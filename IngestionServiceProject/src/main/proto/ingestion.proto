@@ -13,9 +13,11 @@ message DataPacketRequest {
   string patchId = 2;
   string deviceName = 3;
   repeated string data = 4;
+  string version=5;
 }
 
 message DataPacketResponse {
   string servermsg= 1;
   repeated int64 ingestedTimeStamps = 2;
+
 }

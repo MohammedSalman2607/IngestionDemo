@@ -33,14 +33,15 @@ public final class Ingestion {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\017ingestion.proto\022\tcom.kafka\"Z\n\021DataPack" +
+      "\n\017ingestion.proto\022\tcom.kafka\"k\n\021DataPack" +
       "etRequest\022\022\n\ncaseNumber\030\001 \001(\t\022\017\n\007patchId" +
       "\030\002 \001(\t\022\022\n\ndeviceName\030\003 \001(\t\022\014\n\004data\030\004 \003(\t" +
-      "\"C\n\022DataPacketResponse\022\021\n\tservermsg\030\001 \001(" +
-      "\t\022\032\n\022ingestedTimeStamps\030\002 \003(\0032e\n\020Ingesti" +
-      "onService\022Q\n\020ingestDataPacket\022\034.com.kafk" +
-      "a.DataPacketRequest\032\035.com.kafka.DataPack" +
-      "etResponse\"\000B\r\n\tcom.kafkaP\001b\006proto3"
+      "\022\017\n\007version\030\005 \001(\t\"C\n\022DataPacketResponse\022" +
+      "\021\n\tservermsg\030\001 \001(\t\022\032\n\022ingestedTimeStamps" +
+      "\030\002 \003(\0032e\n\020IngestionService\022Q\n\020ingestData" +
+      "Packet\022\034.com.kafka.DataPacketRequest\032\035.c" +
+      "om.kafka.DataPacketResponse\"\000B\r\n\tcom.kaf" +
+      "kaP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -59,7 +60,7 @@ public final class Ingestion {
     internal_static_com_kafka_DataPacketRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_kafka_DataPacketRequest_descriptor,
-        new java.lang.String[] { "CaseNumber", "PatchId", "DeviceName", "Data", });
+        new java.lang.String[] { "CaseNumber", "PatchId", "DeviceName", "Data", "Version", });
     internal_static_com_kafka_DataPacketResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_com_kafka_DataPacketResponse_fieldAccessorTable = new

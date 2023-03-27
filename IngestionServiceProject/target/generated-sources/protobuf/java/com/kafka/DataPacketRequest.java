@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     patchId_ = "";
     deviceName_ = "";
     data_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    version_ = "";
   }
 
   @java.lang.Override
@@ -71,6 +72,12 @@ private static final long serialVersionUID = 0L;
               mutable_bitField0_ |= 0x00000008;
             }
             data_.add(s);
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            version_ = s;
             break;
           }
           default: {
@@ -240,6 +247,40 @@ private static final long serialVersionUID = 0L;
     return data_.getByteString(index);
   }
 
+  public static final int VERSION_FIELD_NUMBER = 5;
+  private volatile java.lang.Object version_;
+  /**
+   * <code>string version = 5;</code>
+   */
+  public java.lang.String getVersion() {
+    java.lang.Object ref = version_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      version_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string version = 5;</code>
+   */
+  public com.google.protobuf.ByteString
+      getVersionBytes() {
+    java.lang.Object ref = version_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      version_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -265,6 +306,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < data_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, data_.getRaw(i));
+    }
+    if (!getVersionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, version_);
     }
     unknownFields.writeTo(output);
   }
@@ -292,6 +336,9 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getDataList().size();
     }
+    if (!getVersionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, version_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -316,6 +363,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getDeviceName());
     result = result && getDataList()
         .equals(other.getDataList());
+    result = result && getVersion()
+        .equals(other.getVersion());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -337,6 +386,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + DATA_FIELD_NUMBER;
       hash = (53 * hash) + getDataList().hashCode();
     }
+    hash = (37 * hash) + VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getVersion().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -478,6 +529,8 @@ private static final long serialVersionUID = 0L;
 
       data_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000008);
+      version_ = "";
+
       return this;
     }
 
@@ -514,6 +567,7 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000008);
       }
       result.data_ = data_;
+      result.version_ = version_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -583,6 +637,10 @@ private static final long serialVersionUID = 0L;
           ensureDataIsMutable();
           data_.addAll(other.data_);
         }
+        onChanged();
+      }
+      if (!other.getVersion().isEmpty()) {
+        version_ = other.version_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -912,6 +970,75 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       ensureDataIsMutable();
       data_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object version_ = "";
+    /**
+     * <code>string version = 5;</code>
+     */
+    public java.lang.String getVersion() {
+      java.lang.Object ref = version_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        version_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string version = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getVersionBytes() {
+      java.lang.Object ref = version_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        version_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string version = 5;</code>
+     */
+    public Builder setVersion(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      version_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string version = 5;</code>
+     */
+    public Builder clearVersion() {
+      
+      version_ = getDefaultInstance().getVersion();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string version = 5;</code>
+     */
+    public Builder setVersionBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      version_ = value;
       onChanged();
       return this;
     }

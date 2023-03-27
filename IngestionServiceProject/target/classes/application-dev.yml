@@ -1,0 +1,24 @@
+spring:
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9092
+      group-id: group-id
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+  message:
+    topic:
+      ingestion : ingestion
+  redis:
+    host: localhost
+    port: 6379
+
+grpc:
+  server:
+    port : 9091
+    address : 127.0.0.1
+
+logging:
+  level:
+    ROOT: DEBUG
+    com.project.ingestion: DEBUG
